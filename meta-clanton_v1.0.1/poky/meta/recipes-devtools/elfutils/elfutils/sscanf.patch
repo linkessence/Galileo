@@ -1,0 +1,30 @@
+diff --git a/src/addr2line.c b/src/addr2line.c
+index 57f1eca..48f017b 100644
+--- elfutils-0.148.orig/src/addr2line.c
++++ elfutils-0.148/src/addr2line.c
+@@ -447,10 +447,10 @@ handle_address (const char *string, Dwfl *dwfl)
+       bool parsed = false;
+       int i, j;
+       char *name = NULL;
+-      if (sscanf (string, "(%a[^)])%" PRIiMAX "%n", &name, &addr, &i) == 2
++      if (sscanf (string, "(%m[^)])%" PRIiMAX "%n", &name, &addr, &i) == 2
+ 	  && string[i] == '\0')
+ 	parsed = adjust_to_section (name, &addr, dwfl);
+-      switch (sscanf (string, "%a[^-+]%n%" PRIiMAX "%n", &name, &i, &addr, &j))
++      switch (sscanf (string, "%m[^-+]%n%" PRIiMAX "%n", &name, &i, &addr, &j))
+ 	{
+ 	default:
+ 	  break;
+diff --git a/tests/line2addr.c b/tests/line2addr.c
+index 1180062..5630da3 100644
+--- elfutils-0.148.orig/tests/line2addr.c
++++ elfutils-0.148/tests/line2addr.c
+@@ -132,7 +132,7 @@ main (int argc, char *argv[])
+     {
+       struct args a = { .arg = argv[cnt] };
+ 
+-      switch (sscanf (a.arg, "%a[^:]:%d", &a.file, &a.line))
++      switch (sscanf (a.arg, "%m[^:]:%d", &a.file, &a.line))
+ 	{
+ 	default:
+ 	case 0:
