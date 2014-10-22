@@ -1,0 +1,54 @@
+meta-webserver
+==============
+
+This layer provides support for building web servers, web-based
+applications and related software.
+
+
+
+Dependencies
+------------
+
+This layer depends on:
+
+URI: git://github.com/openembedded/oe-core.git
+subdirectory: meta
+branch: dylan
+revision: HEAD
+
+For some recipes, the meta-oe layer is required:
+
+URI: git://github.com/openembedded/meta-oe.git
+subdirectory: meta-oe
+branch: dylan
+revision: HEAD
+
+
+
+Layout
+------
+
+recipes-httpd/      Web servers
+recipes-php/        PHP and PHP applications
+recipes-webadmin/   Standalone web administration interfaces
+
+
+
+Maintenance
+-----------
+
+Send patches / pull requests to openembedded-devel@lists.openembedded.org
+with '[meta-webserver][dylan]' in the subject.
+
+Layer maintainer: Paul Eggleton <paul.eggleton@linux.intel.com>
+
+
+License
+-------
+
+All metadata is MIT licensed unless otherwise stated. Source code included
+in tree for individual recipes is under the LICENSE stated in each recipe
+(.bb file) unless otherwise stated.
+
+This README document is Copyright (C) 2012 Intel Corporation.
+

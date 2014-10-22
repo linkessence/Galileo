@@ -1,0 +1,32 @@
+configure will check endianness of build machine. When cross compile it fails.
+So remove the check for Yocto.
+
+Upstream-Status: Pending
+
+Signed-off-by: Kang Kai <kai.kang@windriver.com>
+Signed-off-by: Sen Zhang <sen.zhang@windriver.com>
+
+--- ghostscript-9.05/base/configure.ac.orig     2013-01-06 10:02:08.699479511 +0800
++++ ghostscript-9.05/base/configure.ac  2013-01-06 10:01:52.275382106 +0800
+@@ -1741,13 +1741,13 @@
+ 
+ AC_MSG_CHECKING([for big endian])
+ 
+-AC_RUN_IFELSE(
+-  [AC_LANG_PROGRAM([#include <stdio.h>], [
+-   static const int one = 1;
+-   return (*(char*)&one == 0 ? 0 : 1);
+-  ])],
+-  [LCMS_BIGENDIAN=1],
+-  [LCMS_BIGENDIAN=0])
++dnl AC_RUN_IFELSE(
++dnl   [AC_LANG_PROGRAM([#include <stdio.h>], [
++dnl    static const int one = 1;
++dnl    return (*(char*)&one == 0 ? 0 : 1);
++dnl   ])],
++dnl   [LCMS_BIGENDIAN=1],
++dnl   [LCMS_BIGENDIAN=0])
+ 
+ if test "x$LCMS_BIGENDIAN" != "x0"; then
+   LCMS_ENDIAN="-DUSE_BIG_ENDIAN=$LCMS_BIGENDIAN"
+
