@@ -1217,7 +1217,7 @@ class FetchMethod(object):
                     if destdir != "." and not os.access("%s/%s" % (rootdir, destdir), os.F_OK):
                         os.makedirs("%s/%s" % (rootdir, destdir))
                     cmd = 'cp -pPR %s %s/%s/' % (file, rootdir, destdir)
-                    #cmd = 'tar -cf - -C "%d" -ps . | tar -xf - -C "%s/%s/"' % (file, rootdir, destdir)
+                    #cmd = 'tar -cf - -C "%d" -p . | tar -xf - -C "%s/%s/"' % (file, rootdir, destdir)
                 else:
                     # The "destdir" handling was specifically done for FILESPATH
                     # items.  So, only do so for file:// entries.
