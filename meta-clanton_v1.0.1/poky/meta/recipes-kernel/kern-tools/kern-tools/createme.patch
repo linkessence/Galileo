@@ -1,0 +1,13 @@
+diff --git a/tools/createme b/tools/createme
+index 219e92d..60c14f0 100755
+--- /git.orig/tools/createme
++++ /git/tools/createme
+@@ -117,7 +117,7 @@ metaize()
+ 		version=`grep -E "^VERSION =" Makefile | cut -d\= -f2 | sed 's/ //g'`
+ 		patchlevel=`grep -E "^PATCHLEVEL =" Makefile | cut -d\= -f2 | sed 's/ //g'`
+ 		sublevel=`grep -E "^SUBLEVEL =" Makefile | cut -d\= -f2 | sed 's/ //g'`
+-		echo -n "v" >> $meta_dir/cfg/kernel-cache/kver
++		echo -n "v" > $meta_dir/cfg/kernel-cache/kver
+ 		echo -n "$version" >> $meta_dir/cfg/kernel-cache/kver
+ 		echo -n "." >> $meta_dir/cfg/kernel-cache/kver
+ 		echo -n "$patchlevel" >> $meta_dir/cfg/kernel-cache/kver

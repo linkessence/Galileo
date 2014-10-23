@@ -5,13 +5,13 @@ LIC_FILES_CHKSUM = "file://git/tools/kgit;beginline=5;endline=9;md5=d8d1d729a70c
 DEPENDS = "git-native guilt-native"
 
 SRCREV = "1a3c59526d6abe95662820b9493c8a62dab52d79"
-PR = "r13"
+PR = "r11"
 PV = "0.1+git${SRCPV}"
 
 inherit native
 
-SRC_URI = "git://git.yoctoproject.org/yocto-kernel-tools.git;protocol=git \"
-          "kern-tools/createme.patch"
+SRC_URI = "git://git.yoctoproject.org/yocto-kernel-tools.git;protocol=git \ 
+           file://createme.patch"
 
 S = "${WORKDIR}"
 
