@@ -9,16 +9,15 @@ ARM_INSTRUCTION_SET = "arm"
 
 DEPENDS = "python-numpy v4l-utils libav gtk+ libtool swig swig-native python jpeg bzip2 zlib libpng tiff glib-2.0"
 
-SRC_URI = "${SOURCEFORGE_MIRROR}/opencvlibrary/opencv-unix/${PV}/OpenCV-${PV}.tar.bz2 \
-           file://opencv-fix-pkgconfig-generation.patch \
+SRC_URI = "${SOURCEFORGE_MIRROR}/opencvlibrary/opencv-unix/${PV}/opencv-${PV}.zip \
 "
 
-SRC_URI[md5sum] = "c0a5af4ff9d0d540684c0bf00ef35dbe"
-SRC_URI[sha256sum] = "f8fbe985978d4eae73e8c3b526ed40a37d4761d2029a5b035233f58146f6f59b"
+SRC_URI[md5sum] = "ec63952d3a3dff965d5fdde765926821"
+SRC_URI[sha256sum] = "1bf4cb87283797fd91669d4f90b622a677a903c20b4a577b7958a2164f7596c6"
 
-PR = "r2"
+PR = "r1"
 
-S = "${WORKDIR}/OpenCV-${PV}"
+S = "${WORKDIR}/opencv-${PV}"
 
 # Do an out-of-tree build
 OECMAKE_SOURCEPATH = "${S}"
@@ -68,10 +67,10 @@ python populate_packages_prepend () {
 PACKAGES_DYNAMIC += "^libopencv-.*"
 
 FILES_${PN} = ""
-FILES_${PN}-apps = "${bindir}/* ${datadir}/OpenCV"
+FILES_${PN}-apps = "${bindir}/* ${datadir}/opencv"
 FILES_${PN}-dbg += "${libdir}/.debug"
 FILES_${PN}-dev = "${includedir} ${libdir}/pkgconfig"
-FILES_${PN}-doc = "${datadir}/OpenCV/doc"
+FILES_${PN}-doc = "${datadir}/opencv/doc"
 
 ALLOW_EMPTY_${PN} = "1"
 
