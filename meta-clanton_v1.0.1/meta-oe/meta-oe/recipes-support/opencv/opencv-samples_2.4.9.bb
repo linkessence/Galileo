@@ -11,8 +11,8 @@ LIC_FILES_CHKSUM = "file://include/opencv2/opencv.hpp;endline=41;md5=6d690d8488a
 SRC_URI = "${SOURCEFORGE_MIRROR}/opencvlibrary/opencv-unix/${PV}/opencv-${PV}.zip \
 "
 
-SRC_URI[md5sum] = "ec63952d3a3dff965d5fdde765926821"
-SRC_URI[sha256sum] = "1bf4cb87283797fd91669d4f90b622a677a903c20b4a577b7958a2164f7596c6"
+SRC_URI[md5sum] = "7f958389e71c77abdf5efe1da988b80c"
+SRC_URI[sha256sum] = "803010848154988e9cbda8b3fa857fcbb27382c2946ed729e1a7e40600bb4c71"
 
 S = "${WORKDIR}/opencv-${PV}"
 
