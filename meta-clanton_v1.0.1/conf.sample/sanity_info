@@ -1,0 +1,3 @@
+SANITY_VERSION 1
+TMPDIR /home/ubuntu/IntelGalileo/bsp_1.0.1/meta-clanton_v1.0.1/yocto_build/tmp
+SSTATE_DIR /home/ubuntu/IntelGalileo/bsp_1.0.1/meta-clanton_v1.0.1/yocto_build/sstate-cache
